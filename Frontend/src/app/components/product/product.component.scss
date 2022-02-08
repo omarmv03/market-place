@@ -1,0 +1,17 @@
+.product-card {
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    width: 250px;
+    height: 300px;
+    margin: 3px;
+
+    .description {
+        height: 100px;
+    }
+
+    .price {
+        margin: 3%;
+        float: right;
+    }
+}

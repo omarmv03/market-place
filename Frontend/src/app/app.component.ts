@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MarketService } from './services/market.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'creek-market-place';
+
+  /**
+   *
+   */
+  constructor(private marketService: MarketService) {
+  }
+
+  
+  public get cantMarket() : number {
+    return this.marketService.cant;
+  }
+  
 }
