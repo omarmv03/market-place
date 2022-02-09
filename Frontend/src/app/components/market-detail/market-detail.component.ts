@@ -20,7 +20,7 @@ export class MarketDetailComponent implements OnInit {
   public get total() : number {
     var total = 0;
     this.list.forEach(i => {
-      total = total + i.precio;
+      total = total + (i.precio * i.cantidadPedida);
     });
 
     return total;
@@ -29,6 +29,10 @@ export class MarketDetailComponent implements OnInit {
 
   public get cantMarket() : number {
     return this.marketService.cant;
+  }
+
+  remove(pr: Producto) {
+    this.marketService.removeItem(pr)
   }
 
 }

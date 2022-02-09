@@ -7,13 +7,17 @@ import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MarketDetailComponent } from './components/market-detail/market-detail.component';
+import { LoginComponent } from './components/login/login.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     HomeComponent,
-    MarketDetailComponent
+    MarketDetailComponent,
+    LoginComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
