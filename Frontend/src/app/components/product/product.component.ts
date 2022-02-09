@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MarketService } from 'src/app/services/market.service';
-import { Producto } from '../../model/producto';
+import { IProducto } from '../../model/producto';
 
 @Component({
   selector: 'app-product',
@@ -9,13 +9,13 @@ import { Producto } from '../../model/producto';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() producto!: Producto;
+  @Input() producto!: IProducto;
   constructor(private marketService: MarketService) { }
 
   ngOnInit(): void {
   }
 
-  add(producto: Producto) {
+  add(producto: IProducto) {
     this.marketService.addItem(producto);
   }
 

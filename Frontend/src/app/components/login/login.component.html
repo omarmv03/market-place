@@ -1,16 +1,22 @@
-<form>
+<form style="margin:0 35%;">
+    <div class="text-center">
+        <a class="navbar-brand mt-2 mt-lg-0 " [routerLink]="['/']">
+            <img width="300" alt="Market Place"
+            src="https://www.movilgalaxy.com/wp-content/uploads/2020/06/mejorar-ventas-en-marketplace.png" />
+        </a>
+    </div>
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <input type="email" id="form2Example1" class="form-control" />
-      <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" />
+        <label class="form-label" for="inputEmail">Email address</label>
     </div>
-  
+
     <!-- Password input -->
     <div class="form-outline mb-4">
-      <input type="password" id="form2Example2" class="form-control" />
-      <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" id="inputPassword" class="form-control" />
+        <label class="form-label" for="inputPassword">Password</label>
     </div>
-  
+
     <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-  </form>
+    <button class="btn btn-primary btn-block mb-4" (click)="login()">Sign in</button>
+</form>

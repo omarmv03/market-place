@@ -1,0 +1,61 @@
+<form [formGroup]="formProduct" style="margin: 10px 23%;">
+    <div class="form-group row" *ngIf="id">
+        <label for="inputID" class="col-sm-2 col-form-label">ID</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputID" placeholder="ID" formControlName="id" [attr.disabled]="true">
+        </div>
+    </div><br>
+    <div class="form-group row">
+        <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" [ngClass]="{'is-invalid':f.titulo.touched && f.titulo.errors?.required}"  class="form-control" id="inputTitle" placeholder="Title" formControlName="titulo" maxLength="30" required>
+            <div *ngIf="f.titulo.touched && f.titulo.errors" class="text-danger">
+                <div *ngIf="f.titulo.errors.required">Field Required.</div>
+            </div>
+        </div>
+    </div><br>
+    <div class="form-group row">
+        <label for="textAreaDescription" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+            <textarea [ngClass]="{'is-invalid':f.descripcion.touched && f.descripcion.errors?.required}" class="form-control" maxLength="50" id="textAreaDescription" formControlName="descripcion" placeholder="Description" required></textarea>
+            <div *ngIf="f.descripcion.touched && f.descripcion.errors" class="text-danger">
+                <div *ngIf="f.descripcion.errors.required">Field Required.</div>
+            </div>
+        </div>
+    </div><br>
+    <div class="form-group row">
+        <label for="inputPrice" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+            <input [ngClass]="{'is-invalid':f.precio.touched && f.precio.errors?.required}" type="text" class="form-control" id="inputPrice" placeholder="Price" formControlName="precio" maxLength="10" required>
+            <div *ngIf="f.precio.touched && f.precio.errors" class="text-danger">
+                <div *ngIf="f.precio.errors.required">Field Required.</div>
+            </div>
+        </div>
+    </div><br>
+    <div class="form-group row">
+        <label for="inputPrice" class="col-sm-2 col-form-label">Image</label>
+        <div class="col-sm-10">
+            <input type="file" [ngClass]="{'is-invalid':f.imagen.touched && f.imagen.errors?.required}" formControlName="imagen" class="form-control" (change)="onFileChange($event)" >
+            <div *ngIf="f.imagen.touched && f.imagen.errors" class="text-danger">
+                <div *ngIf="f.imagen.errors?.required">Field Required.</div>
+                <div *ngIf="f.imagen.errors?.requiredFileType">Invalid Extension.</div>
+                <div *ngIf="f.imagen.errors?.fileSizeValidator">Invalid Size.</div>
+            </div><br>
+            <img *ngIf="imageURL" [src]="imageURL" width="300">
+        </div>
+    </div><br>
+
+
+    <div *ngIf="formProduct.invalid && submit" class="text-danger text-center">
+        <h5>* Check fields Required.</h5>
+    </div><br>
+
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-danger" [routerLink]="['/products']">Back</button>
+        </div>
+    </div>
+</form>

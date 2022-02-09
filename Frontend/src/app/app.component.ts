@@ -8,7 +8,6 @@ import { MarketService } from './services/market.service';
 })
 export class AppComponent {
   title = 'creek-market-place';
-  showUserMenu = false;
   /**
    *
    */

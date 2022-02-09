@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from 'src/app/model/producto';
+import { IProducto } from 'src/app/model/producto';
 import { MarketService } from 'src/app/services/market.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { MarketService } from 'src/app/services/market.service';
 })
 export class MarketDetailComponent implements OnInit {
 
-  list: Producto[] = [];
+  list: IProducto[] = [];
   constructor(private marketService: MarketService) { }
 
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class MarketDetailComponent implements OnInit {
     return this.marketService.cant;
   }
 
-  remove(pr: Producto) {
+  remove(pr: IProducto) {
     this.marketService.removeItem(pr)
   }
 

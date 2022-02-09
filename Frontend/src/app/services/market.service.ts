@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Producto } from '../model/producto';
+import { IProducto } from '../model/producto';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import { Producto } from '../model/producto';
 export class MarketService {
 
   _cant = 0;
-  _productCart: Producto[] = [];
+  _productCart: IProducto[] = [];
   constructor() { }
   
   public get cant() : number {
@@ -17,12 +17,12 @@ export class MarketService {
     this._cant = v;
   }
 
-  private set productCart(v : Producto) {
+  private set productCart(v : IProducto) {
     v.cantidadPedida = v.cantidadPedida ? v.cantidadPedida + 1 : 1;
     this._productCart.push(v);
   }
   
-  addItem(pr: Producto) {
+  addItem(pr: IProducto) {
     var exist = this._productCart.find(f => f.id === pr.id);
 
     if (exist) {
@@ -35,7 +35,7 @@ export class MarketService {
     this.cant++;
   }
 
-  removeItem(pr: Producto) {
+  removeItem(pr: IProducto) {
     var idx = this._productCart.findIndex(x => x == pr);
     this._productCart[idx].cantidadPedida = this._productCart[idx].cantidadPedida - 1;
     this.cant--;
