@@ -5,6 +5,54 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\MarketPlace.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\netcoreapp3.1\MarketPlace.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\netcoreapp3.1\staticwebassets\MarketPlace.Api.StaticWebAssets.xml" />
+    <Content Include="obj\Debug\netcoreapp3.1\staticwebassets\MarketPlace.StaticWebAssets.xml" />
+    <Content Include="obj\MarketPlace.Api.csproj.nuget.dgspec.json" />
+    <Content Include="obj\MarketPlace.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\Debug\netcoreapp3.1\apphost.exe" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.assets.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.csproj.CopyComplete" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.dll" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.genruntimeconfig.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.pdb" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.Api.RazorTargetAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.assets.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.dll" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.genruntimeconfig.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.pdb" />
+    <None Include="obj\Debug\netcoreapp3.1\MarketPlace.RazorTargetAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\MarketPlace.Api.StaticWebAssets.Manifest.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\MarketPlace.StaticWebAssets.Manifest.cache" />
+    <None Include="obj\MarketPlace.Api.csproj.nuget.g.props" />
+    <None Include="obj\MarketPlace.Api.csproj.nuget.g.targets" />
+    <None Include="obj\MarketPlace.csproj.nuget.g.props" />
+    <None Include="obj\MarketPlace.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MarketPlace.Domain\MarketPlace.Domain.csproj" />
     <ProjectReference Include="..\MarketPlace.Service\MarketPlace.Service.csproj" />
   </ItemGroup>

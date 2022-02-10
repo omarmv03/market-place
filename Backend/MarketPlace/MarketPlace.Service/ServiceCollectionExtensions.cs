@@ -20,6 +20,7 @@ namespace MarketPlace.Service
 		{
 			services.AddTransient<ICommandHandler<NewProductCommand>, NewProductCommandHandler>();
 			services.AddTransient<ICommandHandler<DeleteProductCommand>, DeleteProductCommandHandler>();
+			services.AddTransient<ICommandHandler<AlterProductCommand>, AlterProductCommandHandler>();
 			return services;
 		}
 
