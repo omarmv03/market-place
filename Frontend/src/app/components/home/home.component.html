@@ -1,5 +1,5 @@
 <div class="home">
-    <div *ngFor="let p of productos$ | async">
+    <div *ngFor="let p of productos$">
         <app-product [producto]="p"></app-product>
     </div>
 </div>

@@ -1,4 +1,6 @@
 ﻿using MarketPlace.Domain.Views;
+using MarketPlace.Service.CommandHandler;
+using MarketPlace.Service.Commands;
 using MarketPlace.Service.QueryHandler;
 using MarketPlace.Service.Querys;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,8 @@ namespace MarketPlace.Service
 
 		public static IServiceCollection AddCommandHandlers(this IServiceCollection services)
 		{
+			services.AddTransient<ICommandHandler<NewProductCommand>, NewProductCommandHandler>();
+			services.AddTransient<ICommandHandler<DeleteProductCommand>, DeleteProductCommandHandler>();
 			return services;
 		}
 

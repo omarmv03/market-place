@@ -9,11 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="CommandHandler\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MarketPlace.Domain\MarketPlace.Domain.csproj" />
     <ProjectReference Include="..\MarketPlace.Infrastructure\MarketPlace.Infrastructure.csproj" />
   </ItemGroup>

@@ -37,7 +37,7 @@ export class EditProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.productService.getData().subscribe((x: IProducto[]) => {
+    this.productService.get().subscribe((x: IProducto[]) => {
       this.product = x.find(f => f.id.toString() == this.id);
       if (this.product) {
         this.imageURL = this.product.imagen;
@@ -84,10 +84,16 @@ export class EditProductComponent implements OnInit {
     if (this.formProduct.valid) {
       if (this.id) {
         this.productService.update(new Producto(this.formProduct.value))
-        .subscribe();
+        .subscribe(x => {
+          history.back();
+          alert(x.message);
+        });
       } else {
         this.productService.new(new Producto(this.formProduct.value))
-        .subscribe();
+        .subscribe(x => {
+          history.back();
+          alert(x.message);
+        });
       }
     }
   }

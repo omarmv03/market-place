@@ -25,7 +25,7 @@ namespace MarketPlace.Service.QueryHandler
             using (var ctx = DBContext.GetInstance())
             {
 
-                var queryes = "SELECT * FROM Users";
+                var queryes = "SELECT * FROM Products";
 
                 using (var command = new SQLiteCommand(queryes, ctx))
                 {
@@ -35,7 +35,11 @@ namespace MarketPlace.Service.QueryHandler
                         {
                             result.Add(new ProductView
                             {
-                                Id = Convert.ToInt32(reader["id"].ToString())
+                                Id = Convert.ToInt32(reader["id"].ToString()),
+                                Descripcion = reader["description"].ToString(),
+                                Titulo = reader["title"].ToString(),
+                                Precio = Convert.ToDecimal(reader["price"].ToString()),
+                                Imagen = reader["image"].ToString()
                             });
                         }
                     }

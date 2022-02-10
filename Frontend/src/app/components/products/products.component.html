@@ -37,7 +37,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let p of productos$ | async">
+        <tr *ngFor="let p of productos$">
             <th scope="row">{{p.id}}</th>
             <td>{{p.titulo}}</td>
             <td>{{p.descripcion}}</td>
