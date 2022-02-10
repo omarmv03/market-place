@@ -1,4 +1,6 @@
+using MarketPlace.Api.Helpers;
 using MarketPlace.Service;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +22,16 @@ namespace MarketPlace
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddCors();
+			//#region Authentication
+			//services.AddAuthentication("MPAuthentication")
+			//	.AddScheme<AuthenticationSchemeOptions, MPAuthenticationHandler>("MPAuthentication", null);
+			//#endregion
+			#region Authentication
+			services.AddAuthentication(o => {
+				o.DefaultScheme = "MPAuthentication";
+			})
+			.AddScheme<AuthenticationSchemeOptions, MPAuthenticationHandler>("MPAuthentication", o => { });
+			#endregion
 			services.AddControllers();
 			services.AddServicesDependencies();
 		}
@@ -41,6 +53,7 @@ namespace MarketPlace
 
 			app.UseRouting();
 
+			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>

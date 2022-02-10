@@ -13,6 +13,7 @@ namespace MarketPlace.Service
 		public static IServiceCollection AddQueryHandlers(this IServiceCollection services)
 		{
 			services.AddTransient<IQueryHandler<AllProductsQuery, List<ProductView>>, AllProductsQueryHandler>();
+			services.AddTransient<IQueryHandler<UserQuery, bool>, UserQueryHandler>();
 			return services;
 		}
 
@@ -21,6 +22,9 @@ namespace MarketPlace.Service
 			services.AddTransient<ICommandHandler<NewProductCommand>, NewProductCommandHandler>();
 			services.AddTransient<ICommandHandler<DeleteProductCommand>, DeleteProductCommandHandler>();
 			services.AddTransient<ICommandHandler<AlterProductCommand>, AlterProductCommandHandler>();
+			services.AddTransient<ICommandHandler<LoginCommand>, LoginCommandHandler>();
+			services.AddTransient<ICommandHandler<LogoutCommand>, LogoutCommandHandler>();
+			services.AddTransient<ICommandHandler<RegisterCommand>, RegisterCommandHandler>();
 			return services;
 		}
 

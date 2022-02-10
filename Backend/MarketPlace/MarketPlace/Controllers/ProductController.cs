@@ -3,6 +3,7 @@ using MarketPlace.Domain.Views;
 using MarketPlace.Service;
 using MarketPlace.Service.Commands;
 using MarketPlace.Service.Querys;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace MarketPlace.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
+	[Authorize]
 	public class ProductController : ControllerBase
 	{
 		private readonly IQueryHandler<AllProductsQuery, List<ProductView>> allProductsQueryHandler;
