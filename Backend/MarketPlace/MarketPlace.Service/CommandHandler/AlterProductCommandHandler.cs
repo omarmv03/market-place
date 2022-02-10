@@ -47,7 +47,7 @@ namespace MarketPlace.Service.CommandHandler
         {
             using (var ctx = DBContext.GetInstance())
             {
-                string query = $"UPDATE Products SET Title = ?, Description = ?, Price = ?, Image = ? WHERE ID {p.Id}";
+                string query = $"UPDATE Products SET Title = ?, Description = ?, Price = ?, Image = ? WHERE ID = {p.Id}";
                 using (var command = new SQLiteCommand(query, ctx))
                 {
                     command.Parameters.Add(new SQLiteParameter("title", p.Title));

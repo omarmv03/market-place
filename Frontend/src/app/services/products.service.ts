@@ -23,7 +23,7 @@ export class ProductsService {
   }
 
   update(p: IProducto): Observable<GenericResponse> {
-    return this.httpClient.put<GenericResponse>(environment.serverApi, p);
+    return this.httpClient.put<GenericResponse>(`${environment.serverApi}/${this.controller}`, p);
   }
 
   new(p: IProducto): Observable<GenericResponse> {

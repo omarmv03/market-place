@@ -8,9 +8,9 @@ namespace MarketPlace.Api.Dto
 		public string Descripcion { get; set; }
 		[Required(ErrorMessage = "Imagen requerida")]
 		public string Imagen { get; set; }
-		[Required(ErrorMessage = "Titulo requerida")]
+		[Required(ErrorMessage = "Titulo requerido")]
 		public string Titulo { get; set; }
-		[Required(ErrorMessage = "Precio requerida")]
-		public string Precio { get; set; }
+		[Required(ErrorMessage = "Precio requerido")]
+		public int Precio { get; set; }
 	}
 }

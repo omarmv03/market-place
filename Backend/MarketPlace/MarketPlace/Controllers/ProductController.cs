@@ -61,7 +61,7 @@ namespace MarketPlace.Controllers
 		{
 			try
 			{
-				await this.newProductCommandHandler.Handle(new NewProductCommand(newProduct.Titulo, newProduct.Descripcion, Decimal.Parse(newProduct.Precio), newProduct.Imagen));
+				await this.newProductCommandHandler.Handle(new NewProductCommand(newProduct.Titulo, newProduct.Descripcion, newProduct.Precio, newProduct.Imagen));
 
 				return this.Ok(new { Message = "Product successfully created" });
 			}
@@ -91,7 +91,7 @@ namespace MarketPlace.Controllers
 		{
 			try
 			{
-				await this.alterProductCommandHandler.Handle(new AlterProductCommand(alterProductDto.Id, alterProductDto.Titulo, alterProductDto.Descripcion, Decimal.Parse(alterProductDto.Precio), alterProductDto.Imagen));
+				await this.alterProductCommandHandler.Handle(new AlterProductCommand(alterProductDto.Id, alterProductDto.Titulo, alterProductDto.Descripcion, alterProductDto.Precio, alterProductDto.Imagen));
 
 				return this.Ok(new { Message = "Product successfully edited" });
 			}
