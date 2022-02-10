@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MarketService } from 'src/app/services/market.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class BasicLayoutComponent {
   constructor(private marketService: MarketService,
+              private router: Router,
               private userService: UserService) {
   }
   public get cantMarket() : number {
@@ -20,5 +22,9 @@ export class BasicLayoutComponent {
     return this.userService.isAdmin;
   }
   
+  logout() {
+    this.userService.logout();
+    this.router.navigate(['/login']);
+  }
 
 }

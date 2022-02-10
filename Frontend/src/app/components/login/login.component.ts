@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,14 +10,27 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent {
 
+  get f() { return this.loginForm.controls; }
+  loginForm: FormGroup;
   constructor(private router: Router,
-              private userService: UserService) { }
+    private userService: UserService,
+    private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required, Validators.maxLength(50)]],
+      password: ['', [Validators.required, Validators.maxLength(30)]]
+    }
+    )
+  }
 
   login(): void {
-    this.userService.login()
-    .subscribe(x => {
-      this.router.navigate(['/']);
-    })
+    if (this.loginForm.valid) {
+      this.userService.login(this.loginForm.value)
+        .subscribe(() => {
+          this.router.navigate(['/']);
+        })
+    } else {
+      alert('Requeried fields')
+    }
   }
 
 }

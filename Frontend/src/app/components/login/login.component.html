@@ -1,4 +1,4 @@
-<form style="margin:0 35%;">
+<form style="margin:0 35%;" [formGroup]="loginForm">
     <div class="text-center">
         <a class="navbar-brand mt-2 mt-lg-0 " [routerLink]="['/']">
             <img width="300" alt="Market Place"
@@ -7,16 +7,24 @@
     </div>
     <!-- Email input -->
     <div class="form-outline mb-4">
-        <input type="email" id="inputEmail" class="form-control" />
+        <input [ngClass]="{'is-invalid':f.username.touched && f.username.errors?.required}" type="text" class="form-control" id="inputEmail" placeholder="Username" formControlName="username" maxLength="50" required>
         <label class="form-label" for="inputEmail">Email address</label>
+        <div *ngIf="f.username.touched && f.username.errors" class="text-danger">
+            <div *ngIf="f.username.errors.required">Field Required.</div>
+        </div>
     </div>
 
     <!-- Password input -->
     <div class="form-outline mb-4">
-        <input type="password" id="inputPassword" class="form-control" />
+        <input type="password" [ngClass]="{'is-invalid':f.password.touched && f.password.errors?.required}" class="form-control" id="inputPassword" placeholder="Password" formControlName="password" maxLength="30" required>
         <label class="form-label" for="inputPassword">Password</label>
+        <div *ngIf="f.password.touched && f.password.errors" class="text-danger">
+            <div *ngIf="f.password.errors.required">Field Required.</div>
+        </div>
     </div>
 
     <!-- Submit button -->
     <button class="btn btn-primary btn-block mb-4" (click)="login()">Sign in</button>
+
+    <p>Don't have an account? <a [routerLink]="['/register']" class="link-info">Register here</a></p>
 </form>

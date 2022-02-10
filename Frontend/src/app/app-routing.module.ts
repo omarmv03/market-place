@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MarketDetailComponent } from './components/market-detail/market-detail.component';
 import { ProductsComponent } from './components/products/products.component';
+import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guard/auth.guard';
 import { BasicLayoutComponent } from './layouts/basic-layout/basic-layout.component';
 
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
 
 ];
