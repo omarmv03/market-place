@@ -1,0 +1,16 @@
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\bin\Debug\netcoreapp3.1\MarketPlace.Infrastructure.deps.json
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\bin\Debug\netcoreapp3.1\MarketPlace.Infrastructure.runtimeconfig.json
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\bin\Debug\netcoreapp3.1\MarketPlace.Infrastructure.runtimeconfig.dev.json
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\bin\Debug\netcoreapp3.1\MarketPlace.Infrastructure.dll
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\bin\Debug\netcoreapp3.1\MarketPlace.Infrastructure.pdb
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\bin\Debug\netcoreapp3.1\MarketPlace.Domain.dll
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\bin\Debug\netcoreapp3.1\MarketPlace.Domain.pdb
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.AssemblyInfo.cs
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.csproj.CopyComplete
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.dll
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.pdb
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Infrastructure\obj\Debug\netcoreapp3.1\MarketPlace.Infrastructure.genruntimeconfig.cache

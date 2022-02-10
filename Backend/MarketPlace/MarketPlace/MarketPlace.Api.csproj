@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MarketPlace.Domain\MarketPlace.Domain.csproj" />
+    <ProjectReference Include="..\MarketPlace.Service\MarketPlace.Service.csproj" />
+  </ItemGroup>
+
+
+</Project>

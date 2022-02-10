@@ -1,0 +1,10 @@
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\bin\Debug\netcoreapp3.1\MarketPlace.Domain.deps.json
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\bin\Debug\netcoreapp3.1\MarketPlace.Domain.dll
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\bin\Debug\netcoreapp3.1\MarketPlace.Domain.pdb
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\obj\Debug\netcoreapp3.1\MarketPlace.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\obj\Debug\netcoreapp3.1\MarketPlace.Domain.AssemblyInfoInputs.cache
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\obj\Debug\netcoreapp3.1\MarketPlace.Domain.AssemblyInfo.cs
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\obj\Debug\netcoreapp3.1\MarketPlace.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\obj\Debug\netcoreapp3.1\MarketPlace.Domain.dll
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\obj\Debug\netcoreapp3.1\MarketPlace.Domain.pdb
+C:\Users\Omar Villalba\Documents\market-place\Backend\MarketPlace\MarketPlace.Domain\obj\Debug\netcoreapp3.1\MarketPlace.Domain.csproj.AssemblyReference.cache
