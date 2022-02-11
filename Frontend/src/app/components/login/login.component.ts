@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent {
   loginForm: FormGroup;
   constructor(private router: Router,
     private userService: UserService,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+    private toastr: ToastrService) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.maxLength(50)]],
       password: ['', [Validators.required, Validators.maxLength(30)]]
@@ -29,7 +31,7 @@ export class LoginComponent {
           this.router.navigate(['/']);
         })
     } else {
-      alert('Requeried fields')
+      this.toastr.error('Requeried fields')
     }
   }
 

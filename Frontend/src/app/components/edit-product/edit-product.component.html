@@ -38,7 +38,7 @@
             <input type="file" [ngClass]="{'is-invalid':f.imagen.touched && f.imagen.errors?.required}" formControlName="imagen" class="form-control" (change)="onFileChange($event)" >
             <div *ngIf="f.imagen.touched && f.imagen.errors" class="text-danger">
                 <div *ngIf="f.imagen.errors?.required">Field Required.</div>
-                <div *ngIf="f.imagen.errors?.requiredFileType">Invalid Extension.</div>
+                <div *ngIf="f.imagen.errors?.requiredFileType">Invalid Extension. Only JPG.</div>
                 <div *ngIf="f.imagen.errors?.fileSizeValidator">Invalid Size.</div>
             </div><br>
             <img *ngIf="imageURL" [src]="imageURL" width="300">

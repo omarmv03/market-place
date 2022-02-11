@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProducto } from 'src/app/model/producto';
 import { MarketService } from 'src/app/services/market.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-market-detail',
@@ -10,7 +11,8 @@ import { MarketService } from 'src/app/services/market.service';
 export class MarketDetailComponent implements OnInit {
 
   list: IProducto[] = [];
-  constructor(private marketService: MarketService) { }
+  constructor(private marketService: MarketService,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.list = this.marketService._productCart;
@@ -33,6 +35,10 @@ export class MarketDetailComponent implements OnInit {
 
   remove(pr: IProducto) {
     this.marketService.removeItem(pr)
+  }
+
+  checkout() {
+    this.toastr.success('This functionality is coming soon.');
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { IProducto, Producto } from 'src/app/model/producto';
 import { ProductsService } from 'src/app/services/products.service';
 import { fileSizeValidator } from 'src/app/validators/fileSize.validator';
@@ -23,7 +24,8 @@ export class EditProductComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private productService: ProductsService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService) {
       
     this.formProduct = this.formBuilder.group({
       titulo: ['', [Validators.required, Validators.maxLength(30)]],
@@ -40,7 +42,7 @@ export class EditProductComponent implements OnInit {
     this.productService.get().subscribe((x: IProducto[]) => {
       this.product = x.find(f => f.id.toString() == this.id);
       if (this.product) {
-        this.imageURL = this.product.imagen;
+        this.imageURL = 'data:image/jpg;base64,'+this.product.imagen;
         this.product.imagen = '';
         this.formProduct.patchValue(this.product);
       }
@@ -52,7 +54,7 @@ export class EditProductComponent implements OnInit {
 
     this.formProduct.controls.imagen.setValidators([fileSizeValidator(event.target.files),
                                                       Validators.required,
-                                                      requiredFileType(["jpeg","jpg","png"])]);
+                                                      requiredFileType(["jpg"])]);
     
     this.formProduct.controls.imagen.updateValueAndValidity();
 
@@ -62,13 +64,7 @@ export class EditProductComponent implements OnInit {
       reader.readAsArrayBuffer(file);
     
       reader.onloadend = () => {
-        const arrayBuffer: any = reader.result,
-        array = new Uint8Array(arrayBuffer);
-        const fileByteArray = [];
-        for (let i = 0; i < array.length; i++) {
-            fileByteArray.push(array[i]);
-        }
-        this.formProduct.controls.file.patchValue(fileByteArray);
+        this.formProduct.controls.file.patchValue(file);
       };
 
       reader = new FileReader();
@@ -86,13 +82,13 @@ export class EditProductComponent implements OnInit {
         this.productService.update(new Producto(this.formProduct.value))
         .subscribe(x => {
           history.back();
-          alert(x.message);
+          this.toastr.success(x.message);
         });
       } else {
-        this.productService.new(new Producto(this.formProduct.value))
+        this.productService.new(new Producto(this.formProduct.value), this.formProduct.controls.file.value)
         .subscribe(x => {
           history.back();
-          alert(x.message);
+          this.toastr.success(x.message);
         });
       }
     }

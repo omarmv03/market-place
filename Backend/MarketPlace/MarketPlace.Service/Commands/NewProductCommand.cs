@@ -4,7 +4,7 @@ namespace MarketPlace.Service.Commands
 {
 	public class NewProductCommand
 	{
-		public NewProductCommand(String title, String description, Decimal price, String image)
+		public NewProductCommand(String title, String description, Decimal price, byte[] image)
 		{
 			this.Title = title;
 			this.Description = description;
@@ -15,6 +15,6 @@ namespace MarketPlace.Service.Commands
 		public String Title { get; private set; }
 		public String Description { get; private set; }
 		public Decimal Price { get; private set; }
-		public String Image { get; set; }
+		public byte[] Image { get; set; }
 	}
 }

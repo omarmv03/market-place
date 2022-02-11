@@ -25,7 +25,7 @@
                         <div class="d-flex flex-row align-items-center">
                           <div>
                             <img
-                              [src]="pr.imagen"
+                              [src]="'data:image/jpg;base64,'+pr.imagen"
                               class="img-fluid rounded-3" [alt]="pr.titulo" style="width: 65px;">
                           </div>
                           <div class="ms-3">
@@ -72,7 +72,7 @@
                         <p class="mb-2">{{(total + 20) | currency}}</p>
                       </div>
   
-                      <button type="button" class="btn btn-info btn-block btn-lg">
+                      <button type="button" class="btn btn-info btn-block btn-lg" (click)="checkout()">
                         <div class="d-flex justify-content-between">
                           <span>{{(total + 20) | currency}}</span>
                           <span>&nbsp; Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>

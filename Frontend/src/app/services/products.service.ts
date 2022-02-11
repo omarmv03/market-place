@@ -26,7 +26,11 @@ export class ProductsService {
     return this.httpClient.put<GenericResponse>(`${environment.serverApi}/${this.controller}`, p);
   }
 
-  new(p: IProducto): Observable<GenericResponse> {
-    return this.httpClient.post<GenericResponse>(`${environment.serverApi}/${this.controller}`, p);
+  new(p: IProducto, file: File): Observable<GenericResponse> {
+    const formData$ = new FormData();
+    formData$.append('file', file); 
+    formData$.append('jsonObject', JSON.stringify(p));
+
+    return this.httpClient.post<GenericResponse>(`${environment.serverApi}/${this.controller}`, formData$);
   }
 }

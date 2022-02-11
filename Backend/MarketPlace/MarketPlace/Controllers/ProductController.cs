@@ -4,10 +4,14 @@ using MarketPlace.Service;
 using MarketPlace.Service.Commands;
 using MarketPlace.Service.Querys;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
+using MarketPlace.Api.Helpers;
 
 namespace MarketPlace.Controllers
 {
@@ -59,17 +63,19 @@ namespace MarketPlace.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> NewProduct(NewProductDto newProduct)
+		public async Task<IActionResult> NewProduct([FromForm] UploadFileDto uploadFileDto)
 		{
 			try
 			{
-				await this.newProductCommandHandler.Handle(new NewProductCommand(newProduct.Titulo, newProduct.Descripcion, newProduct.Precio, newProduct.Imagen));
+				NewProductDto product = JsonConvert.DeserializeObject<NewProductDto>(uploadFileDto.JsonObject);
+				var fileByte = uploadFileDto.File.GetBytes();
+				await this.newProductCommandHandler.Handle(new NewProductCommand(product.Titulo, product.Descripcion, product.Precio, fileByte));
 
 				return this.Ok(new { Message = "Product successfully created" });
 			}
 			catch (Exception ex)
 			{
-				return this.Ok(new { Message = ex.Message });
+				return this.BadRequest(new { Message = ex.Message });
 			}
 		}
 
@@ -82,7 +88,7 @@ namespace MarketPlace.Controllers
 			}
 			catch (Exception ex)
 			{
-				return this.Ok(new { Message = ex.Message });
+				return this.BadRequest(new { Message = ex.Message });
 			}
 			return this.Ok(new { Message = "Product successfully deleted" });
 
@@ -99,7 +105,7 @@ namespace MarketPlace.Controllers
 			}
 			catch (Exception ex)
 			{
-				return this.Ok(new { Message = ex.Message });
+				return this.BadRequest(new { Message = ex.Message });
 			}
 		}
 	}

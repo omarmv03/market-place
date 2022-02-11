@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { IProducto } from 'src/app/model/producto';
 import { ProductsService } from 'src/app/services/products.service';
@@ -12,7 +13,8 @@ export class ProductsComponent implements OnInit{
 
   showModal = false;
   selectedProduct!: IProducto;
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService,
+              private toastr: ToastrService) { }
   public productos$: IProducto[] = [];
   
   ngOnInit(): void {
@@ -28,7 +30,7 @@ export class ProductsComponent implements OnInit{
       this.productsService.get().subscribe(x => {
         this.productos$ = x;
       });
-      alert(x.message);
+      this.toastr.success(x.message);
     });
   }
 

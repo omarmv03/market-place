@@ -13,7 +13,6 @@ export class TokenInterceptor implements HttpInterceptor {
     const newReq = req.clone({
       setHeaders: {
         'token': `${token}`,
-        'Content-type': 'application/json',
         'Access-Control-Allow-Origin': '*' 
       }
     });

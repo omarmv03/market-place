@@ -1,5 +1,7 @@
-﻿using System.Data.SQLite;
+﻿using System;
+using System.Data.SQLite;
 using System.IO;
+using System.Text;
 
 namespace MarketPlace.Infrastructure.DataAccess
 {
@@ -47,13 +49,16 @@ namespace MarketPlace.Infrastructure.DataAccess
 
 		private static void InitialProduct(SQLiteConnection ctx)
 		{
+			string path = @"..\Util\\image.jpg";
+
 			string query = "INSERT INTO Products (Title, Description, Price, Image) VALUES (?, ?, ?, ?)";
 			using (var command = new SQLiteCommand(query, ctx))
 			{
+				var img = File.ReadAllBytes(path);
 				command.Parameters.Add(new SQLiteParameter("title", "Teclado Gammer"));
 				command.Parameters.Add(new SQLiteParameter("description", "Teclado Gammer con 6 meses garantia"));
 				command.Parameters.Add(new SQLiteParameter("price", "5000"));
-				command.Parameters.Add(new SQLiteParameter("image", "https://http2.mlstatic.com/D_NQ_NP_929016-MLA45169314172_032021-O.webp"));
+				command.Parameters.Add(new SQLiteParameter("image", img));
 
 				command.ExecuteNonQuery();
 			}

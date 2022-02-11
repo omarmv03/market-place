@@ -54,7 +54,6 @@ namespace MarketPlace.Service.CommandHandler
                     command.Parameters.Add(new SQLiteParameter("description", p.Description));
                     command.Parameters.Add(new SQLiteParameter("price", p.Price));
                     command.Parameters.Add(new SQLiteParameter("image", p.Image));
-
                     command.ExecuteNonQuery();
                 }
             }

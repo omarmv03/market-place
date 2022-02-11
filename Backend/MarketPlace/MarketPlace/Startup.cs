@@ -22,10 +22,6 @@ namespace MarketPlace
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddCors();
-			//#region Authentication
-			//services.AddAuthentication("MPAuthentication")
-			//	.AddScheme<AuthenticationSchemeOptions, MPAuthenticationHandler>("MPAuthentication", null);
-			//#endregion
 			#region Authentication
 			services.AddAuthentication(o => {
 				o.DefaultScheme = "MPAuthentication";

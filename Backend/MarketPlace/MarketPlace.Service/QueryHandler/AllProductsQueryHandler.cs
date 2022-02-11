@@ -39,7 +39,7 @@ namespace MarketPlace.Service.QueryHandler
                                 Descripcion = reader["description"].ToString(),
                                 Titulo = reader["title"].ToString(),
                                 Precio = Convert.ToDecimal(reader["price"].ToString()),
-                                Imagen = reader["image"].ToString()
+                                Imagen = (byte[])reader["image"]
                             });
                         }
                     }
